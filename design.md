@@ -1,6 +1,6 @@
 
 
-Task Name     Notes    Date completed    Complete btn     Delete Btn
+Task Name     Notes    Date completed      Status   Complete btn     Delete Btn
 --------------------------------------------------------------------
 |
 |
