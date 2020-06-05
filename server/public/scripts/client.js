@@ -105,19 +105,20 @@ function update() {
     let taskId = $(element).data().id;
     let date = new Date();
     console.log(date);
-    date = date.toString();
+    date = date.toString(); //make sure it is a string
    
-    date = date.slice(0,15);
+    date = date.slice(0,15); //cuts off time stamp
     console.log(date);
+    
 
-    // let updateObj={
-    //     id: taskId,
-    //     date: date,
-    // }
+    let updateObj={
+        id: taskId,
+        date: date,
+    }
     $.ajax({
       type: "PUT",
       url: "/todo/"+ taskId,
-    //   data: updateObj,
+      data: updateObj,
 
     }).then(function (response) {
       console.log("marked as read");

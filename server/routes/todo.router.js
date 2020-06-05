@@ -67,16 +67,20 @@ router.delete('/:id', (req, res) => {
 
 // PUT
 router.put("/:id", (req, res) => {
-    let id = req.params.id; // id of the thing to delete
-    let date = new Date();
-    // let date = moment();
-    date.toString();
+    // let id = req.params.id; // id of the thing to delete
+    // let date = req.params.date;
+    
+
+    const task = req.body;
+    const id = task.id;
+    const date = task.date;
+    
     let queryText ="UPDATE todo SET date = $1 WHERE (date = 'Not Completed' AND id = $2)";
     pool
-      .query(queryText,[date], [id])
+      .query(queryText,[date, id])
   
       .then(function (result) {
-        console.log("Update to koala for id of", id);
+        console.log("Update task for id of", id);
         // result.rows: 'INSERT 0 1';
         // it worked!
         res.send(result.rows);
