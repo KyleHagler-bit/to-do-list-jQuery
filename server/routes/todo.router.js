@@ -1,6 +1,7 @@
 const pool = require('../modules/pool.js');
 const express = require('express');
 const router = express.Router();
+const moment = require('moment');
 
 // GET
 router.get("/", (req, res) => {
@@ -64,6 +65,26 @@ router.delete('/:id', (req, res) => {
         });
 }); //end DELETE
 
-
+// PUT
+router.put("/:id", (req, res) => {
+    let id = req.params.id; // id of the thing to delete
+    let date = new Date();
+    // let date = moment();
+    date.toString();
+    let queryText ="UPDATE todo SET date = $1 WHERE (date = 'Not Completed' AND id = $2)";
+    pool
+      .query(queryText,[date], [id])
+  
+      .then(function (result) {
+        console.log("Update to koala for id of", id);
+        // result.rows: 'INSERT 0 1';
+        // it worked!
+        res.send(result.rows);
+      })
+      .catch(function (error) {
+        console.log("Sorry, there was an error with your query: ", error);
+        res.sendStatus(500); // HTTP SERVER ERROR
+      });
+  });
 
 module.exports = router;

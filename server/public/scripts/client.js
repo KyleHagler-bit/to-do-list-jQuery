@@ -1,14 +1,17 @@
 $(document).ready(onReady);
 
+
+
 function onReady(){
     console.log('jquery is loaded!');
     $('#addButton').on('click', addTask);
     $(document).on("click", "#deleteButton", deleteTask);
+    $(document).on("click", "#updateButton", update);
     getHistory();
 } //end onReady
 
-
-function addTask(){
+//-------POST---------------------
+function addTask(){ 
     let name = $('#taskNameIn').val();
     let notes = $('#notesIn').val();
 
@@ -41,6 +44,7 @@ function addTask(){
 
 } //end func addTask
 
+//---------GET----------------------
 function getHistory(){
     $.ajax({
         type: 'GET',
@@ -57,7 +61,7 @@ function getHistory(){
                 rowElement.append(`<td>${task.name}</td>`);
                 rowElement.append(`<td>${task.notes}</td>`);
                 rowElement.append(`<td id = 'status'>${task.date}</td>`);
-                rowElement.append(`<td><button class="update-button" data-id='${task.id}'>Mark as Completed</button></td>`);
+                rowElement.append(`<td><button id="updateButton" data-id='${task.id}'>Mark as Completed</button></td>`);
                 rowElement.append(`<td class ='lastColumn'><button id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
 
             $('#viewTodoList').append(rowElement);
@@ -66,7 +70,7 @@ function getHistory(){
     }) //.then 
 }//end getHistory
 
-
+//-------DELETE---------------------------
 function deleteTask(){
     const element = event.target;
     let taskId = $(element).data().id;
@@ -94,4 +98,30 @@ function deleteTask(){
         return;
       }
     });
-}
+}//end deleteTask
+
+function update() {
+    const element = event.target;
+    let taskId = $(element).data().id;
+    let date = new Date();
+    console.log(date);
+    date = date.toString();
+   
+    date = date.slice(0,15);
+    console.log(date);
+
+    // let updateObj={
+    //     id: taskId,
+    //     date: date,
+    // }
+    $.ajax({
+      type: "PUT",
+      url: "/todo/"+ taskId,
+    //   data: updateObj,
+
+    }).then(function (response) {
+      console.log("marked as read");
+      location.reload();
+    });
+  }
+
