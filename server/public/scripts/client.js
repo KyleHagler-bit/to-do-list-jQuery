@@ -56,15 +56,25 @@ function getHistory(){
         
         for (let i = 0; i < response.length; i++) {
             let task = response[i];
-            
+            console.log(task.date);
+
             let rowElement = $('<tr class = "row"></tr>');
+            if (task.date === 'Not Completed'){
                 rowElement.append(`<td>${task.name}</td>`);
                 rowElement.append(`<td>${task.notes}</td>`);
                 rowElement.append(`<td id = 'status'>${task.date}</td>`);
                 rowElement.append(`<td><button id="updateButton" data-id='${task.id}'>Mark as Completed</button></td>`);
                 rowElement.append(`<td class ='lastColumn'><button id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
-
+            }else{
+                
+                rowElement.append(`<td>${task.name}</td>`);
+                rowElement.append(`<td>${task.notes}</td>`);
+                rowElement.append(`<td id = 'status'>${task.date}</td>`);
+                rowElement.append(`<td><img src="images/checkmark_trim.png" id="checkmark"/></td>`);
+                rowElement.append(`<td class ='lastColumn'><button id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
+            }
             $('#viewTodoList').append(rowElement);
+            
         } //end for loop
 
     }) //.then 
