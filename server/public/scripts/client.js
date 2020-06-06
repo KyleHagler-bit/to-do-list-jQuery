@@ -58,20 +58,20 @@ function getHistory(){
             let task = response[i];
             console.log(task.date);
 
-            let rowElement = $('<tr class = "row"></tr>');
+            let rowElement = $('<tr></tr>');
             if (task.date === 'Not Completed'){
-                rowElement.append(`<td>${task.name}</td>`);
+                rowElement.append(`<td scope='row'>${task.name}</td>`);
                 rowElement.append(`<td>${task.notes}</td>`);
-                rowElement.append(`<td id = 'status'>${task.date}</td>`);
-                rowElement.append(`<td><button id="updateButton" data-id='${task.id}'>Mark as Completed</button></td>`);
-                rowElement.append(`<td class ='lastColumn'><button id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
+                rowElement.append(`<td style='text-align:center' id = 'status'>${task.date}</td>`);
+                rowElement.append(`<td><button class='btn btn-success btn-sm' id="updateButton" data-id='${task.id}'>Mark Complete</button></td>`);
+                rowElement.append(`<td class ='lastColumn'><button class="btn btn-danger btn-sm" id='deleteButton' data-id='${task.id}'>Delete Task</button></td>`);
             }else{
                 
                 rowElement.append(`<td>${task.name}</td>`);
                 rowElement.append(`<td>${task.notes}</td>`);
-                rowElement.append(`<td id = 'status'>${task.date}</td>`);
-                rowElement.append(`<td><img src="images/checkmark_trim.png" id="checkmark"/></td>`);
-                rowElement.append(`<td class ='lastColumn'><button id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
+                rowElement.append(`<td style='text-align:center' id = 'status'>${task.date}</td>`);
+                rowElement.append(`<td><img src='images/checkmark_trim.png' id="checkmark"/></td>`);
+                rowElement.append(`<td class ='lastColumn'><button class="btn btn-danger btn-sm" id="deleteButton" data-id='${task.id}'>Delete Task</button></td>`);
             }
             $('#viewTodoList').append(rowElement);
             

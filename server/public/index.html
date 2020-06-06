@@ -7,30 +7,42 @@
     <script src="vendors/sweetalert.min.js"></script> 
     <!-- <script src="vendors/moment.js"></script> -->
     <script src="scripts/client.js" charset="utf-8"></script>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
    
-    
+    <header>
       <h1>To Do List</h1>
-
-      <input type="text" id="taskNameIn" value="" placeholder="Task Name">
-      <input type="text" id="notesIn" value="" placeholder="Task Notes" autocomplete="none">
-      <button class="btn btn-sm" id="addButton">Add Task</button>
+      </header>
+      <hr>
       
-      <table class="table table-striped table-hover">
+      <form>
+
+      <div class="form-row" style="margin-bottom: 2%" >
+        
+      <input type="text" id="taskNameIn" value="" placeholder="Task Name" style="width:15%; margin-left:5%;">
+      
+      <input type="text" id="notesIn" value="" placeholder="Task Notes" autocomplete="none" style="width: 40%; margin-left: 2%">
+      
+      <button class="btn btn-success btn-lg" id="addButton" style="margin-left: 2%">Add Task</button>
+      
+    </div>
+
+    </form>
+      
+      <table class="table table-striped" style = "width: 80%;">
         <thead>
           <tr>
-            <th>Task Name</th>
-            <th>Notes</th>
-            <th>Date Completed</th>
-            <th>Update Task</th>
-            <th>Delete Btn</th>
+            <th style="width:8%">Task Name</th>
+            <th style="width:32%">Notes</th>
+            <th style="width:5%">Date Completed</th>
+            <th style="width:5%"></th>
+            <th style="width:4%"></th>
           </tr>
         </thead>
-        <tbody id="viewTodoList">
+        <tbody id="viewTodoList" class="">
           
         </tbody>
       </table>
