@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>To-Do List</title>
-    <script src="vendors/jquery-3.5.1.min.js" charset="utf-8"></script>
-    <script src="vendors/sweetalert.min.js"></script> 
-    <!-- <script src="vendors/moment.js"></script> -->
-    <script src="scripts/client.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-   
-    <header>
-      <h1>To Do List</h1>
-      </header>
-    
-      
-      <form>
 
-      <div class="form-row" style="margin-bottom: 2%; margin-top: 2%" >
-      
-      
-      <span class = "input-group-text" style="margin-left: 5%">Task Name</span>
+<head>
+  <meta charset="utf-8">
+  <title>To-Do List</title>
+  <script src="vendors/jquery-3.5.1.min.js" charset="utf-8"></script>
+  <script src="vendors/sweetalert.min.js"></script>
+  <!-- <script src="vendors/moment.js"></script> -->
+  <script src="scripts/client.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>To Do List</h1>
+  </header>
+
+
+  <form>
+
+    <div class="form-row" style="margin-bottom: 2%; margin-top: 2%">
+
+
+      <span class="input-group-text" style="margin-left: 5%">Task Name</span>
       <input type="text" id="taskNameIn" value="" style="width:10%;">
-      <span class = "input-group-text" style="margin-left: 2%">Task Notes</span>
-      <input type="text" id="notesIn" value=""  autocomplete="none" style="width: 32%;">
-      <span class = "input-group-text" style="margin-left: 2%">Due Date</span>
-      <input type="date" id="dueDate"  value="" style="width:10%;">
-      
+      <span class="input-group-text" style="margin-left: 2%">Task Notes</span>
+      <input type="text" id="notesIn" value="" autocomplete="none" style="width: 32%;">
+      <span class="input-group-text" style="margin-left: 2%">Due Date</span>
+      <input type="date" id="dueDate" value="" style="width:10%;">
+
       <button class="btn btn-success btn-lg" id="addButton" style="margin-left: 2%">Add Task</button>
-      
+
     </div>
 
-    </form>
-      
-      <table class="table table-striped" style = "width: 80%;">
-        <thead>
-          <tr>
-            <th style="width:8%">Task Name</th>
-            <th style="width:28%">Notes</th>
-            <th style="width:8%">Due Date</th>
-            <th style="width:8%">Date Completed</th>
-            <th style="width:5%"></th>
-            <th style="width:6%"></th>
-          </tr>
-        </thead>
-        <tbody id="viewTodoList" class="">
-          
-        </tbody>
-      </table>
-      
-   
+  </form>
+
+  <table class="table table-striped" style="width: 80%;">
+    <thead>
+      <tr>
+        <th style="width:8%">Task Name</th>
+        <th style="width:28%">Notes</th>
+        <th style="width:8%">Due Date</th>
+        <th style="width:8%">Date Completed</th>
+        <th style="width:5%"></th>
+        <th style="width:6%"></th>
+      </tr>
+    </thead>
+    <tbody id="viewTodoList" class="">
+
+    </tbody>
+  </table>
+
+
   <footer>
     <p>&COPY 2020</p>
   </footer>
-  </body>
+</body>
+
 </html>
