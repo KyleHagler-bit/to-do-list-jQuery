@@ -1,16 +1,18 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Weekend SQL To-Do List
 
 ## Description
+This application allows users to add tasks, mark tasks complete, and delete tasks off a list. It also allows for due dates to be entered to organize tasks by urgency.
 
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
-
-
-npm install moment --save
+## Installation
+<!-- npm install moment --save NOT USED -->
 npm init --yes
 npm install express --save
 npm install pg --save
+
+## Screen Shot
+
+![screenshot](images/todo_screenshot.jpg)
+
+Testing
+
+wahta is going on
