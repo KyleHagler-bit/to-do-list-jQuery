@@ -1,12 +1,12 @@
 const pool = require('../modules/pool.js');
 const express = require('express');
 const router = express.Router();
-const moment = require('moment');
+// const moment = require('moment');
 
 // GET
 router.get("/", (req, res) => {
     // create our SQL -- just a string
-    let queryText = "SELECT * from todo;";
+    let queryText = "SELECT * from todo ORDER BY due ASC"; //mostpressing tasks first
     // send our query to the pool (to postgres)
     pool
       .query(queryText)
@@ -27,6 +27,7 @@ router.post("/", (req, res) => {
     const name = todo.name;
     const notes = todo.notes;
     const date = todo.date;
+    const due=todo.due;
       
     if (name === undefined) {
       // stop, dont touch the database
@@ -35,10 +36,10 @@ router.post("/", (req, res) => {
     }
   
     const queryText = `
-          INSERT INTO todo (name, notes, date) 
-          VALUES ($1, $2, $3);`;
+          INSERT INTO todo (name, notes, date, due) 
+          VALUES ($1, $2, $3, $4);`;
     pool
-      .query(queryText, [name, notes, date])
+      .query(queryText, [name, notes, date, due])
       .then(function (result) {
         res.sendStatus(200); // 200: OK it worked!
       })
