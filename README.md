@@ -10,9 +10,6 @@ npm install express --save
 npm install pg --save
 
 ## Screen Shot
+![screenshot](server/public/images/todo_screenshot.jpg)
 
-![screenshot](images/todo_screenshot.jpg)
-
-Testing
-
-wahta is going on
+Could not get screenshot to work...
