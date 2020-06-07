@@ -16,15 +16,19 @@
     <header>
       <h1>To Do List</h1>
       </header>
-      <hr>
+    
       
       <form>
 
-      <div class="form-row" style="margin-bottom: 2%" >
-        
-      <input type="text" id="taskNameIn" value="" placeholder="Task Name" style="width:15%; margin-left:5%;">
+      <div class="form-row" style="margin-bottom: 2%; margin-top: 2%" >
       
-      <input type="text" id="notesIn" value="" placeholder="Task Notes" autocomplete="none" style="width: 40%; margin-left: 2%">
+      
+      <span class = "input-group-text" style="margin-left: 5%">Task Name</span>
+      <input type="text" id="taskNameIn" value="" style="width:10%;">
+      <span class = "input-group-text" style="margin-left: 2%">Task Notes</span>
+      <input type="text" id="notesIn" value=""  autocomplete="none" style="width: 32%;">
+      <span class = "input-group-text" style="margin-left: 2%">Due Date</span>
+      <input type="date" id="dueDate"  value="" style="width:10%;">
       
       <button class="btn btn-success btn-lg" id="addButton" style="margin-left: 2%">Add Task</button>
       
@@ -36,10 +40,11 @@
         <thead>
           <tr>
             <th style="width:8%">Task Name</th>
-            <th style="width:32%">Notes</th>
-            <th style="width:5%">Date Completed</th>
+            <th style="width:28%">Notes</th>
+            <th style="width:8%">Due Date</th>
+            <th style="width:8%">Date Completed</th>
             <th style="width:5%"></th>
-            <th style="width:4%"></th>
+            <th style="width:6%"></th>
           </tr>
         </thead>
         <tbody id="viewTodoList" class="">
