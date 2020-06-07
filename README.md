@@ -6,8 +6,11 @@ This application allows users to add tasks, mark tasks complete, and delete task
 ## Installation
 Create a database named "todo". See database.sql file in order to copy and paste text to recreate table for app. The project is built on Postgres, so you will need to make sure to have that installed. It is recommended to use Postico to run queries as that was used to create the queries,
 <!-- npm install moment --save NOT USED -->
-npm init --yes  <!--cant get these ot be on new lines...-->
+npm init --yes 
+<!--cant get these ot be on new lines...-->
+
 npm install express --save 
+
 npm install pg --save
 
 ## Screen Shot
@@ -15,6 +18,7 @@ npm install pg --save
 
 ## Prerequisites
 Node.js
+
 Bootstap
 
 ## License
