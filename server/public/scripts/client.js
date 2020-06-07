@@ -15,8 +15,14 @@ function onReady(){
 function addTask(event){ 
     let name = $('#taskNameIn').val();
     let notes = $('#notesIn').val();
+    console.log(notes);
     let due = $('#dueDate').val();
-    
+
+    if (due ==='' || due ===null){
+      due = undefined;
+    }
+
+    console.log(due);
     let now = new Date();
     let dueMilli = new Date(due);
 
@@ -30,7 +36,7 @@ function addTask(event){
         due: due,
     };
     //getTime turns them to millseconds and then compares numbers
-    if (setDate < nowDate){ //do not let user enter past date for due date
+    if ((setDate < nowDate)  && name !=='' && due !==undefined){ //do not let user enter past date for due date
       event.preventDefault(); //stops page from "passing by" swalAlert
       swal({
         position: 'top-end',
@@ -41,7 +47,7 @@ function addTask(event){
       })
       
     }
-      else if (name !=='' && name !==undefined &&(setDate >= nowDate)){
+      else if (name !=='' && name !==undefined &&((setDate >= nowDate) || due===undefined )){
         $('#taskNameIn').val('');//clears input
         $('#notesIn').val('');
         $('#dueDate').val('');
@@ -59,7 +65,8 @@ function addTask(event){
             console.log(taskObj);
         });
         
-    } else {
+    }
+    else {
         alert('Please enter task name before submitting'); 
     }
 
@@ -84,7 +91,15 @@ function getHistory(){
            
 
             let rowElement = $('<tr></tr>');
-            if (task.date === 'Not Completed'){
+            if (task.date === 'Not Completed' && (formattedDue==='Wed Dec 31 1969' || task.due===null)){ //equinox?
+              rowElement.append(`<td scope='row'>${task.name}</td>`);
+              rowElement.append(`<td>${task.notes}</td>`);
+              rowElement.append(`<td style='text-align:center'>Due Date Not Specified</td>`)
+              rowElement.append(`<td style='text-align:center' id = 'status'>${task.date}</td>`);
+              rowElement.append(`<td><button class='btn btn-success btn-sm' id="updateButton" data-id='${task.id}'>Mark Complete</button></td>`);
+              rowElement.append(`<td class ='lastColumn'><button class="btn btn-danger btn-sm" id='deleteButton' data-id='${task.id}'>Delete Task</button></td>`);
+          }
+            else if (task.date === 'Not Completed'){
                 rowElement.append(`<td scope='row'>${task.name}</td>`);
                 rowElement.append(`<td>${task.notes}</td>`);
                 rowElement.append(`<td style='text-align:center'>${formattedDue}</td>`)

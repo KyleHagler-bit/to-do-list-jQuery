@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
       // stop, dont touch the database
       res.sendStatus(400); // 400 BAD REQUEST
       return;
-    }
+    } 
   
     const queryText = `
           INSERT INTO todo (name, notes, date, due) 
