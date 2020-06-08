@@ -58,7 +58,7 @@ router.delete('/:id', (req, res) => {
     DELETE FROM todo WHERE id=$1;`
   pool.query(queryText, [id])
     .then(function (result) {
-      res.sendStatus(201);
+      res.sendStatus(204); //something deleted
     }).catch(function (error) {
       console.log('Sorry, there was an error with your query: ', error);
       res.sendStatus(500);
