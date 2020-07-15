@@ -3,7 +3,7 @@
 ## Description
 This application allows users to add tasks, mark tasks complete, and delete tasks off a list. It also allows for due dates to be entered to organize tasks by urgency.
 
-To see a deployed version of the app, visit [this link](#https://warm-chamber-13574.herokuapp.com/)
+To see a deployed version of the app, visit [this link](https://warm-chamber-13574.herokuapp.com/)
 
 ## Installation
 Create a database named "todo". See database.sql file in order to copy and paste text to recreate table for app. The project is built on Postgres, so you will need to make sure to have that installed. It is recommended to use Postico to run queries as that was used to create the queries,
