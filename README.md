@@ -24,8 +24,14 @@ Note that the notes field as well as the due date field are not required to fill
 Your task should appear on the table. Then, at your leisure, you may delete the task or mark it as complete.
 
 ## Prerequisites
-Node.js
-Bootstap
+Note that it is important to have ```Node.js``` installed in order to use this app.
+
+## Built With
+This project included elements from:
+* jQuery
+* postgreSQL
+* Bootstrap
+
 
 ## License
 MIT
